@@ -16,18 +16,36 @@ use App\Models\Post;
 
 Route::get('/', function () {
 
+    /*
     $post = new Post();
     $post->title = "test title";
     $post->content = "test content";
     $post->save();
+    */
 
+    /*
     Post::create([
         'title'=>'created title',
         'content'=>'created content',
     ]);
+    */
 
+    /*
     $post = Post::find(1);
     echo '標題: '.$post->title.'<br>';
     echo '內容: '.$post->content.'<br>';
+    dd($post);
+    */
+
+    
+    $posts = Post::all();
+
+    // 每次迴圈依序取出一篇貼文
+    foreach($posts as $post){
+        echo '編號: '.$post->id.'<br>';
+        echo '標題: '.$post->title.'<br>';
+        echo '內容: '.$post->content.'<br>';
+        echo '張貼時間: '.$post->created_at.'<br>';
+    }
     dd($post);
 });
