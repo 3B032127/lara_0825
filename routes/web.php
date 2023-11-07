@@ -75,5 +75,9 @@ Route::get('/', function () {
     $post -> delete();
     */
 
+    /*
     Post::destroy(2);
+    */
+
+    Post::destroy(3, 5, 7);
 });
