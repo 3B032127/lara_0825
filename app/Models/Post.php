@@ -13,4 +13,9 @@ class Post extends Model
         'content',
         'is_feature'
     ];
+
+    public function comment()
+    {
+        return $this -> hasMany(Comment::class);
+    }
 }
